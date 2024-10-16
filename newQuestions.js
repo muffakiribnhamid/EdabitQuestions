@@ -153,3 +153,81 @@ console.log(countTrue([true, false, false, true, false]));
 
 
 
+
+// Array of Multiples
+// arrayOfMultiples(7, 5) ➞ [7, 14, 21, 28, 35]
+
+// arrayOfMultiples(12, 10) ➞ [12, 24, 36, 48, 60, 72, 84, 96, 108, 120]
+
+// arrayOfMultiples(17, 6) ➞ [17, 34, 51, 68, 85, 102]
+
+//approach
+// generate an array with numbers from n to length
+
+function arrayOfMultiples(a,n) {
+    const multiples = []
+    for(let i = 1; i <= n; i++) {
+        multiples.push(a * i)
+    }
+    return multiples
+
+
+}
+
+//Write a function createArray(n) that takes a number n as an argument and returns an array containing all the integers from 1 to n.
+
+
+function createArray(n) {
+    let newArr = []
+    for(let i = 1; i <= n; i++) {
+        newArr.push(i)
+    }
+    return newArr
+}
+console.log(createArray(5));
+
+function createArray2(n) {
+    return Array.from({length : n}, (_,i) => i + 1)
+    
+}
+console.log(createArray2(5));
+
+//Problem 2: Sum of an Array
+// Write a function sumArray(arr) that takes an array of numbers as an argument and returns the sum of all the numbers in the array.
+
+function sumArray(arr) {
+    let sum = 0
+    if(Array.isArray(arr)) {
+        for(let i = 0; i < arr.length; i++) {
+            sum+=arr[i]
+        }
+    }
+    return sum
+
+}
+
+console.log(sumArray([1,1,2,3]));
+
+
+function sumArray2(arr) {
+    if(Array.isArray(arr)) {
+        return arr.reduce((acc,current) => acc + current)
+    }
+}
+console.log(sumArray2([1,1,2,3]));
+
+//Write a function factorial(n) that takes a non-negative integer n and returns the factorial of n (i.e., the product of all positive integers up to n).
+
+function factorial(n) {
+    if(n < 0) return "Factorial Won't work on Negative Numbers"
+    if(n == 0) return 1;
+
+    let product = 1;
+    for (let i = 1; i <= n; i++) {
+        product *= i;
+        
+    }
+    return product
+}
+
+console.log(factorial(0));
