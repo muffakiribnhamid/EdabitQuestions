@@ -231,3 +231,58 @@ function factorial(n) {
 }
 
 console.log(factorial(0));
+
+// Problem 1: Reversing a String
+
+function reverseString(str) {
+    return str.split('').reverse().join('')
+}
+//Solution2
+function reverseString2(str) {
+    let reversedArr = []
+    for(let i = 0; i < str.length; i++) {
+        reversedArr.push(str[i])
+        
+        
+    }
+    return reversedArr.reverse().join('')
+}
+console.log(reverseString2('Coder'));
+
+
+//Problem 2: Finding the Maximum Number in an Array
+
+function findMax(arr) {
+    if (!Array.isArray(arr) || arr.length === 0) {
+        return undefined; // Handle edge case if arr is empty or not an array
+    }
+
+    let num = arr[0]
+    if(Array.isArray(arr)) {
+        for (let i = 0; i < arr.length; i++) {
+            if(arr[i] > num) {
+                num = arr[i]
+            }
+            
+        }
+        return num
+    }
+
+}
+
+
+
+//Problem 3: Palindrome Check
+
+function palindromeCheck(str) {
+    let originalStr = str;
+    if(typeof str == "string" && str != '') {
+        let reversedStr = str.split('').reverse().join('')
+        return originalStr == reversedStr
+        
+    }
+    return false
+}
+
+console.log(palindromeCheck('hello'));
+console.log(palindromeCheck('racecar'));
