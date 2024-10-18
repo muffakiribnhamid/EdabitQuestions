@@ -286,3 +286,40 @@ function palindromeCheck(str) {
 
 console.log(palindromeCheck('hello'));
 console.log(palindromeCheck('racecar'));
+
+
+
+//find max
+// findMax([4, 7, 1, 9, 2]); // Output: 9
+
+function findMax(arr) {
+    let max = arr[0];
+    if(Array.isArray(arr)) {
+        for (let i = 0; i < arr.length; i++) {
+            if(arr[i] > max) {
+                max = arr[i]
+            }
+        }
+}
+    return max
+
+}
+
+console.log(findMax([-3, -7, -1, -9]));
+
+
+//Write a function countVowels(str) that takes a string as input and returns the number of vowels (a, e, i, o, u) in the string. Both uppercase and lowercase vowels should be counted.
+
+
+function countVowels(str) {
+    let vowels = ['a','e','i','o','u']
+    let count = 0;
+
+    for (let i = 0; i < str.length; i++) {
+        if (vowels.includes(str[i].toLowerCase())) { // Check if the char is a vowel
+            count++; // Increment the count if it's a vowel
+        }
+    }
+    return count
+}
+console.log(countVowels('Javascript'));
