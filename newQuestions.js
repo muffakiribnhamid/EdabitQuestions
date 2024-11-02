@@ -323,3 +323,76 @@ function countVowels(str) {
     return count
 }
 console.log(countVowels('Javascript'));
+
+// Find the Smallest and Biggest Numbers
+
+function minMax(arr) {
+    let min  = arr[0]
+    let max = arr[0]
+    if(Array.isArray(arr)) {
+       for(let i = 0; i < arr.length; i++) {
+            if(arr[i] > max) {
+                max = arr[i]
+            }
+            else if (arr[i] < min) {
+                min = arr[i]
+            }
+       }
+
+    
+    }
+    return [min,max]
+}
+
+console.log(minMax([2333,3,233,12,111]));
+
+
+
+//Check if One Array can be Nested in Another
+
+// arr1 can be nested inside arr2 if:
+
+// arr1's min is greater than arr2's min.
+// arr1's max is less than arr2's max.
+
+
+function canNest(arr1,arr2) {
+    let min1  = arr1[0]
+    let max1 = arr1[0]
+    let min2  = arr2[0]
+    let max2 = arr2[0]
+
+    if(Array.isArray(arr1) && Array.isArray(arr2)) {
+        for(let i = 0; i < arr1.length; i++) {
+            if(arr1[i] > max1) {
+                max1 = arr1[i] // get max for arr 1 
+            }
+            else if (arr1[i] < min1) {
+                min1 = arr1[i]  // get min for arr 1
+            }
+       }
+       
+       // Similarly for arr 2
+       for(let i = 0; i < arr2.length; i++) {
+           if(arr2[i] > max2) {
+               max2 = arr2[i] // get max for arr 1 
+           }
+           else if (arr2[i] < min2) {
+               min2 = arr2[i]  // get min for arr 1
+           }
+      }
+
+      if(min1 > min2 && max1 < max2) {
+            return true
+      }
+      else {
+        return false
+      }
+        
+    }
+}
+
+
+
+console.log(canNest([1, 2, 3, 4], [0, 6]));
+console.log(canNest([9, 9, 8], [8, 9]));
