@@ -396,3 +396,58 @@ function canNest(arr1,arr2) {
 
 console.log(canNest([1, 2, 3, 4], [0, 6]));
 console.log(canNest([9, 9, 8], [8, 9]));
+
+
+// Sum of Cubes
+// Create a function that takes in an array of numbers and returns the sum of its cubes.
+
+// Examples
+// sumOfCubes([1, 5, 9]) ➞ 855
+// // Since 1^3 + 5^3 + 9^3 = 1 + 125 + 729 = 855
+
+// sumOfCubes([3, 4, 5]) ➞ 216
+
+// sumOfCubes([2]) ➞ 8
+
+// sumOfCubes([]) ➞ 0
+
+function sumOfCubes(arr) {
+    let cubeArr = []
+    if(Array.isArray(arr)) {
+        cubeArr =  arr.map((i) => i ** 3)
+    }
+    return cubeArr.reduce((acc,current) => acc + current)
+
+}
+
+console.log(sumOfCubes([3, 4, 5]));
+
+
+// Even All the Way
+// Given an array of numbers, return an array which contains all the even numbers in the original array, which also have even indices.
+
+// Examples
+// getOnlyEvens([1, 3, 2, 6, 4, 8]) ➞ [2, 4]
+
+// getOnlyEvens([0, 1, 2, 3, 4]) ➞ [0, 2, 4]
+
+// getOnlyEvens([1, 2, 3, 4, 5]) ➞ []
+// Notes
+// Arrays start at index 0.
+
+
+function getOnlyEvens(arr) {
+    let returnArr = []
+    if(Array.isArray(arr)) {
+        for(let i = 0; i < arr.length; i++) {
+            if(arr[i] % 2 == 0 && i % 2 == 0) {
+                returnArr.push(arr[i])
+            }
+        }
+        return returnArr
+
+        }
+
+}
+
+console.log(getOnlyEvens([0, 1, 2, 3, 4]));
