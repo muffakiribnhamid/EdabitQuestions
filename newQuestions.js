@@ -482,3 +482,19 @@ function parseArray(arr) {
 
 
 console.log(parseArray([1,2,3,'w,s']));
+
+
+// Question: Write a JavaScript function called capitalizeWords that takes a string as input and returns a new string where the first letter of each word is capitalized.
+
+
+function capitalizeWords(str) {
+    let newArr = []
+    if(typeof str == 'string') {
+        newArr = str.split('')
+        newArr[0] = newArr[0].toUpperCase()
+    }
+    return newArr.join('')
+}
+
+console.log(capitalizeWords('hello world!'));
+
