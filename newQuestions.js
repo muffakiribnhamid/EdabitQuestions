@@ -532,3 +532,32 @@ function howManyStickers(n) {
 
 console.log(howManyStickers(4));
 console.log(howManyStickers(3));
+
+
+
+// Write a function called removeDuplicates that takes an array of numbers as input and returns a new array with all duplicate values removed. The order of the elements in the returned array should be the same as their first occurrence in the input array.
+
+// removeDuplicates([1, 2, 3, 4, 3, 2, 1, 5]);
+// Output: [1, 2, 3, 4, 5]
+
+
+function removeDuplicates(arr) {
+    let returnEls = new Set()
+    if(Array.isArray(arr)) {
+        for(let i = 0; i < arr.length; i++) {
+            returnEls.add(arr[i])
+        }
+    }
+
+    return Array.from(returnEls)
+    
+}
+
+console.log(removeDuplicates([1,2,3,4,1,1,2,31]));
+
+
+
+
+// isAnagram("listen", "silent"); // Output: true
+// isAnagram("hello", "world");   // Output: false
+
