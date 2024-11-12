@@ -561,3 +561,16 @@ console.log(removeDuplicates([1,2,3,4,1,1,2,31]));
 // isAnagram("listen", "silent"); // Output: true
 // isAnagram("hello", "world");   // Output: false
 
+
+function isAnagram(str1,str2) {
+    if(str1.length !== str2.length) {
+        return false
+    }
+
+    return str1.split('').sort().join('') == str2.split('').sort().join('')
+
+}
+
+console.log(isAnagram('listen','silent'));
+
+console.log(isAnagram('hello','world'));
