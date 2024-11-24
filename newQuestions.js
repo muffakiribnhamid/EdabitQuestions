@@ -564,7 +564,7 @@ console.log(removeDuplicates([1,2,3,4,1,1,2,31]));
 
 function isAnagram(str1,str2) {
     if(str1.length !== str2.length) {
-        return false
+        return f
     }
 
     return str1.split('').sort().join('') == str2.split('').sort().join('')
@@ -574,3 +574,76 @@ function isAnagram(str1,str2) {
 console.log(isAnagram('listen','silent'));
 
 console.log(isAnagram('hello','world'));
+
+
+// Find the Second Largest Number
+// Create a function that takes an array of numbers and returns the second largest number.
+
+// Examples
+// secondLargest([10, 40, 30, 20, 50]) ➞ 40
+
+// secondLargest([25, 143, 89, 13, 105]) ➞ 105
+
+// secondLargest([54, 23, 11, 17, 10]) ➞ 23
+
+
+function secondLargest(arr) {
+    let largest = -Infinity
+    let secondLargest = -Infinity
+    if(Array.isArray(arr)) {
+        for(let i = 0; i < arr.length; i++) {
+            if(arr[i] > largest) {
+                secondLargest = largest
+                largest = arr[i]
+            }
+            else if(arr[i] > secondLargest && arr[i] !== largest) {
+                secondLargest = arr[i]
+            }
+        }
+    }
+    return secondLargest
+}
+
+console.log(secondLargest([10, 40, 30, 20, 50]));
+
+
+
+
+////Question 2
+// Even or Odd?
+
+// Given an array of integers, determine whether the sum of its elements is even or odd.
+
+// The return value should be a string ("odd" or "even").
+
+// If the input array is empty, consider it as an array with a zero ([0]).
+// Examples
+
+// evenOrOdd([0]) ➞ "even"
+
+// evenOrOdd([1]) ➞ "odd"
+
+// evenOrOdd([]) ➞ "even"
+
+// evenOrOdd([0, 1, 5]) ➞ "even"
+
+
+function evenOrOdd(arr) {
+    let sum = 0
+    if(Array.isArray(arr)) {
+        for(let i = 0; i < arr.length; i++) {
+            sum+=arr[i]
+        }
+
+    }
+    return sum % 2 == 0 ? "Even" : "Odd"
+}
+
+
+
+console.log('-------------');
+
+console.log(evenOrOdd([1,2,3]));
+console.log(evenOrOdd([1]));
+console.log(evenOrOdd([2]));
+console.log(evenOrOdd([2,1]));
